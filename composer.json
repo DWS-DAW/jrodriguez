@@ -47,6 +47,11 @@
 			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
 			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
 		]
+		
+		"compile" : [
+			"php app/console doctrine:schema:update --force"
+		]
+		
 	},
 	"config" : {
 		"bin-dir" : "bin"
@@ -57,16 +62,16 @@
 		"symfony-assets-install" : "relative",
 		"incenteev-parameters" : {
 			"file" : "app/config/parameters.yml",
-			"env-map": {
-				"database_host": "DATABASE_HOST",
-				"database_port": "DATABASE_PORT",
-				"database_name": "DATABASE_NAME",
-				"database_user": "DATABASE_USER",
-				"database_password": "DATABASE_PASSWORD"
+			"env-map" : {
+				"database_host" : "DATABASE_HOST",
+				"database_port" : "DATABASE_PORT",
+				"database_name" : "DATABASE_NAME",
+				"database_user" : "DATABASE_USER",
+				"database_password" : "DATABASE_PASSWORD"
 			}
 		},
 		"heroku" : {
-			"framework": "symfony2"
+			"framework" : "symfony2"
 		}
 	}
 }
