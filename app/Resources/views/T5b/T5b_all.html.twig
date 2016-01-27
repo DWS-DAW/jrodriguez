@@ -1,0 +1,41 @@
+{# app/Resources/views/T5b/T5b_all.html.twig #}
+
+        {% extends '::base.html.twig' %}
+        {% block title %}<title>T5b Visualización de lista de productos</title>{% endblock %}
+       	{% block stylesheets %}
+       	     {# Sobreescribe lo establecido en la plantilla base.html.twig #}
+       		<link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css') }}" type="text/css" rel="stylesheet" />
+       		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
+       		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />    
+		{% endblock %}
+   
+        {% block body %}
+           <h3>Los productos son:</h3>
+           <hr>
+           <table border="1">
+             <tr>
+               <th>Id</th>
+               <th>Nombre</th>
+               <th>Precio</th>
+               <th>Descripcion</th>
+               <th>Categoria</th>
+               {% if is_granted('ROLE_APP_ADMIN') %}
+	                 <th><i class="fa fa-trash"></i></th>
+               {% endif %}   
+             </tr>
+              {% for prod in listado_productos %}
+              <tr>
+                 <td>{{ prod.id }}</td>        {# puedo hacerlo así gracias a la fnción __toString, aunque siendo purista  #}
+                 <td>{{ prod.name }}</td>      {# y tb estando ok se debe hacer con los get, aunque esto rompe la independencia #}
+                 <td>{{ prod.price }}</td>     {# de la parte del posible equipo de desarrollo de la parte front de los de la lógica #}
+                 <td>{{ prod.getDescription() }}</td>
+                 <td>{{ prod.category }}</td></td>
+                 {% if is_granted('ROLE_APP_ADMIN') %}
+	                 <td>   
+	                    <a href="{{ path('reg_borraById', {'id':prod.id}) }}"> <i class="fa fa-trash"></i> </a>        
+	                 </td>
+                 {% endif %}    
+              </tr>
+              {% endfor %}
+              <hr>
+		{% endblock %}	

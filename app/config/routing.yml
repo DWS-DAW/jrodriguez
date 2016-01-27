@@ -1,0 +1,11 @@
+#src/app/config/routing.yml
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+app_yml:
+    resource: "@AppBundle/Resources/Config/routing.yml"
+    prefix:   /T5b
+    
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

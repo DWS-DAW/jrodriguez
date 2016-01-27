@@ -1,0 +1,100 @@
+#src/AppBundle/Resources/Config/routing.yml
+ 
+reg_producto:   
+  path: /product/create   
+  defaults: { _controller: AppBundle:Product:createStatic }        
+  
+reg_identificador:
+  path: /product/show/{id}   
+  defaults: { _controller: AppBundle:Product:show}
+  requirements:
+    id: \d{1,2}
+
+reg_lista:   
+  path: /product/list   
+  defaults: { _controller: AppBundle:Product:list }   
+  
+reg_dinamico:   
+  path: /product/create/{name}/{price}   
+  defaults: { _controller: AppBundle:Product:createParam }
+  requirements: 
+    name: "[A-Za-z]+"
+    price: (\d{2})|(\d{2}\.\d{2})
+    
+reg_listaByCat:
+  path: /product/list/category/{category}   
+  defaults: { _controller: AppBundle:Product:listByCategory }
+  requirements:
+    category: "[A-Za-z0-9]+"    
+    
+reg_listaAll:   
+  path: /product/list/category   
+  defaults: { _controller: AppBundle:Product:listAllByCategory }      
+    
+reg_borraById:
+  path: /product/delete/{id}   
+  defaults: { _controller: AppBundle:Product:delete }
+  requirements:
+    id: \d{1,2}
+    
+form_editaProducto:
+  path: /product/edit/{id}
+  defaults: { _controller: AppBundle:Product:edit }
+  requirements:
+    id: \d{1,2}
+  
+    
+cat_dinamica:
+  path: /category/create/{name}   
+  defaults: { _controller: AppBundle:Category:create }
+  requirements: 
+    name: "[A-Za-z0-9]+"
+
+cat_borra:
+  path: /category/delete/{id}   
+  defaults: { _controller: AppBundle:Category:delete }
+  requirements:
+    id: \d{1,2}
+  
+cat_lista:   
+  path: /category/list   
+  defaults: { _controller: AppBundle:Category:list }
+  
+form_prueba:
+  path: /product/new
+  defaults: { _controller: AppBundle:Product:newProduct }
+  
+  
+form_nuevaCategoria:
+  path: /category/new
+  defaults: { _controller: AppBundle:Category:newCategory }  
+  
+form_editaCategoria:
+  path: /category/edit/{id}
+  defaults: { _controller: AppBundle:Category:edit }
+  requirements:
+    id: \d{1,2}
+  
+form_nuevaPersona:
+  path: /person/new
+  defaults: { _controller: AppBundle:Person:new }
+  
+persona_lista:   
+  path: /person/list   
+  defaults: { _controller: AppBundle:Person:list } 
+  
+persona_borraById:
+  path: /person/delete/{id}   
+  defaults: { _controller: AppBundle:Person:delete }
+  requirements:
+    id: \d{1,2}     
+    
+persona_muestraById:
+  path: /person/show/{id}   
+  defaults: { _controller: AppBundle:Person:show }
+  requirements:
+    id: \d{1,2}
+    
+seguridad_1:
+  path: /admin   
+  defaults: { _controller: AppBundle:Default:admin }

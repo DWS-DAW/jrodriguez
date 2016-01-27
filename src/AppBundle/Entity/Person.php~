@@ -1,0 +1,443 @@
+<?php
+// src/AppBundle/Entity/Person.php
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\Date;
+
+/**
+ * Person
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ *
+ */
+class Person {
+	/**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;		
+    
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $name;
+    
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $age;
+    
+    /**
+     * @ORM\Column(type="date")
+     */
+    protected $birthDate;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $height;
+    
+    /**
+     * @ORM\Column(type="string", length=75)
+     */
+    protected $email;
+    
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $phone;
+    
+    /**
+     * @ORM\Column(type="string", length=1)
+     */
+    protected $gender;
+    
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $descends;
+    
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $vehicle;
+    
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    protected $preferredLanguage;
+    
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $englishLevel;
+    
+    /**
+     * @ORM\Column(type="string", length=75)
+     */
+    protected $personalWebSite;
+    
+    /**
+     * @ORM\Column(type="string", length=25)
+     */
+    protected $cardNumber;
+    
+    /**
+     * @ORM\Column(type="string", length=25)
+     */
+    protected $IBAN;
+    
+    
+    
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Person
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set age
+     *
+     * @param int $age
+     *
+     * @return Person
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+
+        return $this;
+    }
+
+    /**
+     * Get age
+     *
+     * @return int
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    /**
+     * Set birthDate
+     *
+     * @param Date $birthDate
+     *
+     * @return Person
+     */
+    public function setBirthDate($birthDate)
+    {
+        $this->birthDate = $birthDate;
+
+        return $this;
+    }
+
+    /**
+     * Get birthDate
+     *
+     * @return Date
+     */
+    public function getBirthDate()
+    {
+        return $this->birthDate;
+    }
+    
+    /**
+     * Set height
+     *
+     * @param int $height
+     *
+     * @return Person
+     */
+    public function setHeight($height)
+    {
+    	$this->height = $height;
+    
+    	return $this;
+    }
+    
+    /**
+     * Get height
+     *
+     * @return int
+     */
+    public function getHeight()
+    {
+    	return $this->height;
+    }
+    
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Person
+     */
+    public function setEmail($email)
+    {
+    	$this->email = $email;
+    
+    	return $this;
+    }
+    
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+    	return $this->email;
+    }
+    
+    /**
+     * Set phone
+     *
+     * @param int $phone
+     *
+     * @return Person
+     */
+    public function setPhone($phone)
+    {
+    	$this->phone = $phone;
+    
+    	return $this;
+    }
+    
+    /**
+     * Get phone
+     *
+     * @return int
+     */
+    public function getPhone()
+    {
+    	return $this->phone;
+    }
+    
+    /**
+     * Set gender
+     *
+     * @param string $gender
+     *
+     * @return Person
+     */
+    public function setGender($gender)
+    {
+    	$this->gender = $gender;
+    
+    	return $this;
+    }
+    
+    /**
+     * Get gender
+     *
+     * @return string
+     */
+    public function getGender()
+    {
+    	return $this->gender;
+    }
+    
+    /**
+     * Set descends
+     *
+     * @param int $descends
+     *
+     * @return Person
+     */
+    public function setDescends($descends)
+    {
+    	$this->descends = $descends;
+    
+    	return $this;
+    }
+    
+    /**
+     * Get descends
+     *
+     * @return int
+     */
+    public function getDescends()
+    {
+    	return $this->descends;
+    }
+    
+    
+    /**
+     * Set vehicle
+     *
+     * @param int $vehicle
+     *
+     * @return Person
+     */
+    public function setVehicle($vehicle)
+    {
+    	$this->vehicle = $vehicle;
+    
+    	return $this;
+    }
+    
+    /**
+     * Get vehicle
+     *
+     * @return int
+     */
+    public function getVehicle()
+    {
+    	return $this->vehicle;
+    }
+    
+    
+    /**
+     * Set preferredLanguage
+     *
+     * @param string $preferredLanguage
+     *
+     * @return Person
+     */
+    public function setPreferredLanguage($preferredLanguage)
+    {
+    	$this->preferredLanguage = $preferredLanguage;
+    
+    	return $this;
+    }
+    
+    /**
+     * Get preferredLanguage
+     *
+     * @return string
+     */
+    public function getPreferredLanguage()
+    {
+    	return $this->preferredLanguage;
+    }
+    
+    /**
+     * Set englishLevel
+     *
+     * @param int $englishLevel
+     *
+     * @return Person
+     */
+    public function setEnglishLevel($englishLevel)
+    {
+    	$this->englishLevel = $englishLevel;
+    
+    	return $this;
+    }
+    
+    /**
+     * Get englishLevel
+     *
+     * @return int
+     */
+    public function getEnglishLevel()
+    {
+    	return $this->englishLevel;
+    }
+    
+    /**
+     * Set personalWebSite
+     *
+     * @param int $personalWebSite
+     *
+     * @return Person
+     */
+    public function setpersonalWebSite($personalWebSite)
+    {
+    	$this->personalWebSite = $personalWebSite;
+    
+    	return $this;
+    }
+    
+    /**
+     * Get personalWebSite
+     *
+     * @return int
+     */
+    public function getpersonalWebSite()
+    {
+    	return $this->personalWebSite;
+    }
+    
+    /**
+     * Set cardNumber
+     *
+     * @param int $cardNumber
+     *
+     * @return Person
+     */
+    public function setCardNumber($cardNumber)
+    {
+    	$this->cardNumber = $cardNumber;
+    
+    	return $this;
+    }
+    
+    /**
+     * Get cardNumber
+     *
+     * @return int
+     */
+    public function getcardNumber()
+    {
+    	return $this->cardNumber;
+    }
+    
+    /**
+     * Set IBAN
+     *
+     * @param int $IBAN
+     *
+     * @return Person
+     */
+    public function setIBAN($IBAN)
+    {
+    	$this->IBAN = $IBAN;
+    
+    	return $this;
+    }
+    
+    /**
+     * Get IBAN
+     *
+     * @return int
+     */
+    public function getIBAN()
+    {
+    	return $this->IBAN;
+    }
+    
+} // del class Person

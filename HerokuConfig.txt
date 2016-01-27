@@ -1,0 +1,4 @@
+=== powerful-peak-86445 Config Vars
+CLEARDB_DATABASE_URL: mysql://becfde3ac8918a:a434a5d8@us-cdbr-iron-east-03.cleardb.net/heroku_9253a3a9f8df5c4?reconnect=true
+SECRET:               your_super_token
+SYMFONY_ENV:          prod

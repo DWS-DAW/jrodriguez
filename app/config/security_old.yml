@@ -1,0 +1,60 @@
+# app/config/security.yml
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        in_memory:
+            #memory: ~
+            memory:
+              # Indico a Symfony que cualquier validacion pedida de area protegida, deben ser solo estos usuarios los que valide
+              # No codifico las contrasenyas
+              users:
+                ryan:  { password: ryanpass, roles: 'ROLE_USER'}
+                admin: { password: kitten, roles: 'ROLE_ADMIN'}
+                user1: { password: 123, roles: 'ROLE_APP_ADMIN'}
+                user2: { password: 123, roles: 'ROLE_USER'}
+                user3: { password: 123, roles: 'ROLE_APP_ADMIN'}
+                user4: { password: 123, roles: 'ROLE_USER'}
+    encoders:
+    # providers carga la inf. de los usr a partir de un obj usr. 
+    # Como en el ejemplo lo estoy haciendo desde el "memory", debo indicar a Symfony que el obj es de plaintext
+    # Si la validacion se hiciese dsd bbdd o cualquier otra fuente, deberia indicar el tipo de obj concreto
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            # activate different ways to authenticate
+            # http_basic: ~
+            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+            
+            # Autenticacion utilizando http_basic (tipico cuadro de dialogo de los exploradores)
+            http_basic: ~
+            
+    # Establezco la directiva access_control    
+    access_control:
+        # Requiero credenciales de rol ROLE_ADMIN para todas aquellas URL que comiencen por /T5b/admin* seguido de cualquier otra cosa
+        # Se debe poner la ruta que precede, en este caso T5b
+        # Aseguro las siguientes rutas para P8 actv 1
+        # Cuando tenga varios roles sobre un mismo recurso, los debo especificar en diferentes lineas
+        - { path: ^/T5b/admin, roles: ROLE_ADMIN }
+        - { path: ^/T5b/product/list, roles: ROLE_APP_ADMIN }
+        - { path: ^/T5b/product/list, roles: ROLE_USER }
+        - { path: ^/T5b/product/edit, roles: ROLE_APP_ADMIN }
+        - { path: ^/T5b/product/delete, roles: ROLE_APP_ADMIN }
+        - { path: ^/T5b/category/list, roles: ROLE_APP_ADMIN }
+        - { path: ^/T5b/category/list, roles: ROLE_USER }
+        - { path: ^/T5b/category/edit, roles: ROLE_APP_ADMIN }
+        - { path: ^/T5b/category/delete, roles: ROLE_APP_ADMIN }
+            
+             
