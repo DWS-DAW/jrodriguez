@@ -1,7 +1,7 @@
 # app/config/config.yml
 
 imports:
-   # - { resource: parameters.yml }    Comentada siguiendo las instrucciones indicadas por la pagina de coderwall.con para trabajar con MySQL
+    - { resource: parameters.yml } 
     - { resource: security.yml }
     - { resource: services.yml }
 
