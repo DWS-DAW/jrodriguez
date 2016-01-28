@@ -1,5 +1,6 @@
 indice:   
-  path: /   
+  path: /  
+  defaults: { _controller: AppBundle }    
    
 
 reg_producto:   
