@@ -33,7 +33,7 @@
                         <ul class="dropdown-menu">
                         	<!-- Los href los saco del src/AppBundle/Resources/Config/routing.yml -->
                             <li><a href="{{ path('reg_producto') }}">Nuevo</a></li>
-                            <li><a href="{{ path('reg_identificador') }}">Nuevo estatica</a></li>
+                            <li><a href="#">Nuevo estatica</a></li>
                             <li><a href="{{ path('reg_dinamico', {name:'ProductoS',price:'30.33'}) }}">Nuevo parametrizado</a></li>                            
                             <li role="separator" class="divider"></li>
                             <li><a href="{{ path('reg_lista') }}">Listado</a></li>
@@ -45,11 +45,11 @@
                         <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Categorias <span class="caret"></span></a>
                       
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('cat_dinamica', {name:'NombreC'}) }}">Nueva</a></li>
-                            <li><a href="{{ path('form_nuevaCategoria')}}">Nueva Estatica</a></li>
+                            <li><a href="#">Nueva</a></li>
+                            <li><a href="#">Nueva Estatica</a></li> 
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{ path('cat_lista') }}">Listado</a></li>
-                            <li><a href="{{ path('reg_listaAll') }}">Listado productos por categoria</a></li>
+                            <li><a href="#">Listado</a></li>
+                            <li><a href="#">Listado productos por categoria</a></li>
                         </ul>
                     </li>
     
@@ -57,9 +57,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Personas <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('form_nuevaPersona') }}">Nueva</a></li>
+                            <li><a href="#">Nueva</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{ path('persona_lista') }}">Listado</a></li>
+                            <li><a href="#">Listado</a></li>
                         </ul>
                     </li>
                     
