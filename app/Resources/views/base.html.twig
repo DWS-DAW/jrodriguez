@@ -34,7 +34,7 @@
                         <ul class="dropdown-menu">
                         	<!-- Los href los saco del src/AppBundle/Resources/Config/routing.yml -->
                             <li><a href="{{ path('reg_producto') }}">Nuevo</a></li>
-                            <li><a href="#">Nuevo estatica</a></li>
+                            <li><a href="{{ path('form_prueba') }}">Nuevo estatica</a></li>
                             <li><a href="{{ path('reg_dinamico', {name:'ProductoS',price:'30.33'}) }}">Nuevo parametrizado</a></li>                            
                             <li role="separator" class="divider"></li>
                             <li><a href="{{ path('reg_lista') }}">Listado</a></li>
@@ -47,7 +47,7 @@
                       
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('cat_dinamica', {name:'NombreCat'}) }}">Nueva</a></li>
-                            <li><a href="#">Nueva Estatica</a></li> 
+                            <li><a href="{{ path('form_nuevaCategoria') }}">Nueva Estatica</a></li> 
                             <li role="separator" class="divider"></li>
                             <li><a href="{{ path('cat_lista') }}">Listado</a></li>
                             <li><a href="{{ path('reg_listaAll') }}">Listado productos por categoria</a></li>
