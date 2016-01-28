@@ -1,8 +1,3 @@
-indice:   
-  path: /  
-  defaults: { _controller: AppBundle }    
-   
-
 reg_producto:   
   path: /product/create   
   defaults: { _controller: AppBundle:Product:createStatic }        
