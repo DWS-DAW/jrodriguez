@@ -36,8 +36,9 @@ security:
             - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/admin/, role: ROLE_ADMIN }
             - { path: ^/admin, roles: ROLE_ADMIN }
-            - { path: ^/product/, roles: [ROLE_APP_ADMIN,ROLE_USER] }            
-            - { path: ^/category/list, roles: ROLE_APP_ADMIN }
-            - { path: ^/category/list, roles: ROLE_USER }
-            - { path: ^/category/edit, roles: ROLE_APP_ADMIN }
-            - { path: ^/category/delete, roles: ROLE_APP_ADMIN }    
+            - { path: ^/product/, roles: [ROLE_APP_ADMIN,ROLE_USER] }
+            - { path: ^/category/, roles: [ROLE_APP_ADMIN,ROLE_USER] }            
+           # - { path: ^/category/list, roles: ROLE_APP_ADMIN }
+           # - { path: ^/category/list, roles: ROLE_USER }
+           # - { path: ^/category/edit, roles: ROLE_APP_ADMIN }
+           # - { path: ^/category/delete, roles: ROLE_APP_ADMIN }    
