@@ -10,7 +10,7 @@
                <th>Id</th>
                <th>Nombre</th>
                {% if is_granted('ROLE_APP_ADMIN') %}
-	                 <th>Eliminacion</th>
+	                 <th><i class="fa fa-trash"></i></th>
                {% endif %} 
               </tr>
               {% for cat in listado_categorias %}
