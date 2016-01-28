@@ -1,3 +1,6 @@
+indice:   
+  path: /   
+   
 
 reg_producto:   
   path: /product/create   

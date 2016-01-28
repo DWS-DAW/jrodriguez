@@ -25,7 +25,7 @@
             
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#"> <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a></li>
+                    <li class="active"><a href="{{ path('indice') }}"> <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a></li>
                   
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -33,7 +33,7 @@
                         <ul class="dropdown-menu">
                         	<!-- Los href los saco del src/AppBundle/Resources/Config/routing.yml -->
                             <li><a href="{{ path('reg_producto') }}">Nuevo</a></li>
-                            <li><a href="T5b/product/create">Nuevo estatica</a></li>
+                            <li><a href="{{ path('reg_identificador') }}">Nuevo estatica</a></li>
                             <li><a href="{{ path('reg_dinamico', {name:'ProductoS',price:'30.33'}) }}">Nuevo parametrizado</a></li>                            
                             <li role="separator" class="divider"></li>
                             <li><a href="{{ path('reg_lista') }}">Listado</a></li>
@@ -45,11 +45,11 @@
                         <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Categorias <span class="caret"></span></a>
                       
                         <ul class="dropdown-menu">
-                            <li><a href="T5b/category/new">Nueva</a></li>
-                            <li><a href="T5b/category/create">Nueva Estatica</a></li>
+                            <li><a href="{{ path('cat_dinamica', {name:'NombreC'}) }}">Nueva</a></li>
+                            <li><a href="{{ path('form_nuevaCategoria')}}">Nueva Estatica</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="T5b/category/list">Listado</a></li>
-                            <li><a href="T5b/product/list/category">Listado productos por categoria</a></li>
+                            <li><a href="{{ path('cat_lista') }}">Listado</a></li>
+                            <li><a href="{{ path('reg_listaAll') }}">Listado productos por categoria</a></li>
                         </ul>
                     </li>
     
@@ -57,9 +57,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Personas <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="T5b/person/new">Nueva</a></li>
+                            <li><a href="{{ path('form_nuevaPersona') }}">Nueva</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="T5b/person/list">Listado</a></li>
+                            <li><a href="{{ path('persona_lista') }}">Listado</a></li>
                         </ul>
                     </li>
                     
