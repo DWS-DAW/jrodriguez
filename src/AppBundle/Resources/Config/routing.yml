@@ -1,5 +1,4 @@
-#src/AppBundle/Resources/Config/routing.yml
- 
+
 reg_producto:   
   path: /product/create   
   defaults: { _controller: AppBundle:Product:createStatic }        

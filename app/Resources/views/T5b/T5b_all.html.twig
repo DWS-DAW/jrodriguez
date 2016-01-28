@@ -2,20 +2,15 @@
 
         {% extends '::base.html.twig' %}
         {% block title %}<title>T5b Visualización de lista de productos</title>{% endblock %}
-       	{% block stylesheets %}
-       	     {# Sobreescribe lo establecido en la plantilla base.html.twig #}
-       		<link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css') }}" type="text/css" rel="stylesheet" />
-       		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 
-       		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />    
-		{% endblock %}
+       	
    
-        {% block body %}
+        {% block content %}
            <h3>Los productos son:</h3>
            <hr>
            <table border="1">
              <tr>
                <th>Id</th>
-               <th>Nombre</th>
+               <th>{{ 'product.name' | trans }}</th>
                <th>Precio</th>
                <th>Descripcion</th>
                <th>Categoria</th>

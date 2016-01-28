@@ -1,58 +1,133 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        
-        {% block stylesheets %}
-            {# el siguiente link es para darle a la salida formatos css m�s bonitos #}
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head 
+    content must come *after* these tags -->
+    <title>Practicas T5b</title>
+    {% block stylesheets %}
+    <!-- CSS de Bootstrap dsd los cdn (central download network) -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" rel="stylesheet"> 
+    <!-- to make use of the glyphicons dsd los cdn (central download network)-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.11.0/bootstrap-social.css" rel="stylesheet">
+    {% endblock %}
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
             
-            {#<!-- Inluido para integrar la barra de navegacion superior T8 actv 3 -->#}
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-            {#<!-- FIN Inluido para integrar la barra de navegacion superior T8 actv 3 --> #}
-            
-        {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        
-        {#<!-- Inluido para integrar la barra de navegacion superior T8 actv 3 Paso 1 como plantilla heredable--> #}
-        <div class="wrapper">
-    	  	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	         <div class="container">
-	            <div class="navbar-header">
-	                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	                    <span class="sr-only">Toggle navigation</span>
-	                    <span class="icon-bar"></span>
-	                    <span class="icon-bar"></span>
-	                    <span class="icon-bar"></span>
-	                </button>
-	            </div>
-	            <div id="navbar" class="navbar-collapse collapse">
-	               {# <form class="navbar-form navbar-right"> #}
-	               {#<!-- Inluida modificacion para integrar la barra de navegacion superior T8 actv 3 Paso 2 como plantilla heredable--> #}
-	                <form class="navbar-form navbar-right" action="{{ path("fos_user_security_check") }}" method="post">
-	                    <div class="form-group form-group-sm">
-	                        <input type="text" class="form-control" name="email" placeholder="Email">
-	                    </div>
-	                    <div class="form-group form-group-sm">
-	                        <input type="text" class="form-control" name="password" placeholder="Password">
-	                    </div>                    
-	                    <div class="form-group form-group-sm">
-	                        <button type="submit" class="btn btn-info"><strong>Sign in</strong></button>
-	                    </div>
-	                </form>
-	            </div>
-	         </div>
-	        </nav>    
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#"> <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a></li>
+                  
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Productos <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                        	<!-- Los href los saco del src/AppBundle/Resources/Config/routing.yml -->
+                            <li><a href="{{ path('reg_producto') }}">Nuevo</a></li>
+                            <li><a href="T5b/product/create">Nuevo estatica</a></li>
+                            <li><a href="{{ path('reg_dinamico', {name:'ProductoS',price:'30.33'}) }}">Nuevo parametrizado</a></li>                            
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{{ path('reg_lista') }}">Listado</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Categorias <span class="caret"></span></a>
+                      
+                        <ul class="dropdown-menu">
+                            <li><a href="T5b/category/new">Nueva</a></li>
+                            <li><a href="T5b/category/create">Nueva Estatica</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="T5b/category/list">Listado</a></li>
+                            <li><a href="T5b/product/list/category">Listado productos por categoria</a></li>
+                        </ul>
+                    </li>
+    
+    				<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Personas <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="T5b/person/new">Nueva</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="T5b/person/list">Listado</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a data-toggle="modal" data-target="#loginModal">
+                    	<span class="glyphicon glyphicon-log-in"></span> Acceder</a>
+                    </li>
+                    <li>               
+	                    <a href="{{ path('fos_user_registration_register') }}"><span class="glyphicon glyphicon-plus"></span> Registrarse</a>
+                    </li>
+                    <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                         	<span class="glyphicon glyphicon-flag"></span> es <span class="caret"></span>
+                         </a>
+                         <ul class="dropdown-menu">
+                             <li><a href="/">es</a></li>                          
+                             <li><a href="/en">en</a></li>
+                         </ul>
+                    </li> 
+                </ul>
+            </div>
         </div>
-        
-	        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	        
-        {#<!-- FIN Inluido para integrar la barra de navegacion superior T8 actv 3 -->#}
-        
-		{% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+    </nav>  
+
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Login </h4>
+                </div>
+                <div class="modal-body">
+                     <form class="form-inline" action="{{ path("fos_user_security_check") }}" method="post">
+                          <div class="form-group">
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+                            <input type="text" class="form-control" placeholder="Email" name="_username" />
+                            <input type="text" class="form-control" placeholder="Password" name="_password" />
+                            <input type="checkbox"> <span class="label label‐danger">Remember me</span>
+                          </div>
+                          <button type="submit" class="btn btn-primary navbar-btn">Sign in</button>
+                          <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>  
+                     </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+	<!-- CUERPO DE LOS RESULTADOS -->    
+    <div id="content" class="container" style="margin-top: 60px">
+    {% block content %}    		        
+	{% endblock %}
+			
+    
+    </div>
+    
+   
+    <!-- Libreria jQuery requerida por los plugins de JavaScript 
+    <script src="http://code.jquery.com/jquery.js"></script> -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Todos los plugins JavaScript de Bootstrap (tambien puedes
+         incluir archivos JavaScript individuales de los únicos
+         plugins que utilices) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</body>
+
 </html>

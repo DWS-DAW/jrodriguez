@@ -3,9 +3,13 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
+index:   
+  path: /  
+  defaults: { _controller: AppBundle:Default:index } 
+
 app_yml:
     resource: "@AppBundle/Resources/Config/routing.yml"
-    prefix:   /T5b
+#   prefix:   /T5b
     
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
