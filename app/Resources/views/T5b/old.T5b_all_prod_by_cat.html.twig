@@ -1,8 +1,16 @@
 {# app/Resources/views/T5b/T5b_all_prod_by_cat.html.twig #}
-		{% extends '::base.html.twig' %}
-        {% block title %}<title>T5b Visualización de lista de productos</title>{% endblock %}
-        
-        {% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}T5b Visualización de lista de productos{% endblock %}</title>
+       	{% block stylesheets %}
+       		<link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css') }}" type="text/css" rel="stylesheet" />
+       		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		{% endblock %}
+    </head>
+    <body>
+        {% block body %}
          {% for cat in listado_categorias %}
               <h4>{{ cat }}</h4>
               <table>
@@ -14,5 +22,6 @@
               </table>
          {% endfor %}
 		{% endblock %}	
-    
+    </body>    
+</html>
 

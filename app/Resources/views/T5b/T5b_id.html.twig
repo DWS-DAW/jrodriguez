@@ -1,16 +1,9 @@
 {# app/Resources/views/T5b/T5b_id.html.twig #}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}T5b Visualización de producto por id{% endblock %}</title>
-       	{% block stylesheets %}
-       	    {# el siguiente link es para darle a la salida formatos css más bonitos #}
-       		<link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css') }}" type="text/css" rel="stylesheet" />
-		{% endblock %}
-    </head>
-    <body>
-        {% block body %}
+
+        {% extends '::base.html.twig' %}
+        {% block title %}<title>T5b Visualización de producto por id</title>{% endblock %}
+    
+        {% block content %}
            <h3>El producto elegido es:</h3>
            <p>
            Identificador:{{ identificador }}<br>
@@ -19,5 +12,3 @@
            Descripcion:{{ descripcion }}<br>
            </p>
 		{% endblock %}	
-    </body>    
-</html>

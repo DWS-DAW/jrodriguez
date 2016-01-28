@@ -1,9 +1,16 @@
 {# app/Resources/views/T5b/T5b_id_person.html.twig #}
-
-    
-        {% extends '::base.html.twig' %}
-        {% block title %}<title>T5b Visualizacion detallada de la persona por id</title>{% endblock %}
-        {% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}T5b Visualizacion detallada de la persona por id{% endblock %}</title>
+       	{% block stylesheets %}
+       	    {# el siguiente link es para darle a la salida formatos css más bonitos #}
+       		<link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css') }}" type="text/css" rel="stylesheet" />
+		{% endblock %}
+    </head>
+    <body>
+        {% block body %}
            <h3>La persona seleccionada es:</h3>
            <p>         
            <strong>Identificador:&nbsp</strong>{{ identificador }}<br>
@@ -23,3 +30,5 @@
            <strong>IBAN:&nbsp</strong>{{ iban }}<br>
            </p>
 		{% endblock %}	
+    </body>    
+</html>
