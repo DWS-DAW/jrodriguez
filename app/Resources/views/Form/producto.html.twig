@@ -1,0 +1,17 @@
+{# src/app/Resources/views/Form/producto.html.twig #}
+
+{% extends '::base.html.twig' %}
+{% form_theme form 'boostrap_3_horizontal_layout.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class='col-sm-5'>
+	        {{ form_start(form) }}
+	        {{ form_widget(form) }}
+	        {{ form_end(form) }}
+	    </div> 
+    </div>
+
+{% endblock %}
+
