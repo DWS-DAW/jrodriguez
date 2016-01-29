@@ -76,11 +76,11 @@
                     </li>
                     <li class="dropdown">
                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                         	<span class="glyphicon glyphicon-flag"></span> es <span class="caret"></span>
+                         	<span class="glyphicon glyphicon-flag"></span> {{ app.request.locale }} <span class="caret"></span>
                          </a>
                          <ul class="dropdown-menu">
-                             <li><a href="/">es</a></li>                          
-                             <li><a href="/en">en</a></li>
+                             <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'es'})) }}">es</a></li>                          
+                             <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">en</a></li>
                          </ul>
                     </li> 
                 </ul>
