@@ -3,6 +3,17 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
+index:   
+  path: /  
+  defaults: { _controller: AppBundle:Default:index } 
+  
+contact:
+  path: /{_locale}/
+  defaults: { _controller: AppBundle:index }  
+  requeriments:
+     _locale: es|en   
+     # esto es una expresion regular que puede tomar valores es o en, de momento
+
 app_yml:
     resource: "@AppBundle/Resources/Config/routing.yml"
 #   prefix:   /T5b
