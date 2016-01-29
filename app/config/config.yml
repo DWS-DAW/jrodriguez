@@ -14,7 +14,7 @@ framework:
     #esi:             ~
     #translator:      { fallbacks: ["%locale%"] }
     #translator: ~
-    # Anyadido para la internacionalización Pract 9
+    # Anyadido para la internacionalizacion Pract 9
     translator:      { fallbacks: en }
     secret:          "%secret%"
     router:
