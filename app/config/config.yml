@@ -15,7 +15,7 @@ framework:
     #translator:      { fallbacks: ["%locale%"] }
     #translator: ~
     # Anyadido para la internacionalizacion Pract 9
-    translator:      { fallbacks: en }
+    translator:      { fallbacks:  ["%locale%"]}
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
