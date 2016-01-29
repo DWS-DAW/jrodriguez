@@ -1,19 +1,19 @@
 {# app/Resources/views/T5b/T5b_all.html.twig #}
-
         {% extends '::base.html.twig' %}
-        {% block title %}<title>T5b Visualización de lista de productos</title>{% endblock %}
-       	
+        {% trans_default_domain 'AppBundle' %}
+        
+        {% block title %} {{ 'product.list.header' | trans }} {% endblock %}
    
         {% block content %}
-           <h3>Los productos son:</h3>
+           <h3> {{ 'product.list.header' | trans }} </h3>
            <hr>
-           <table border="1">
+           <table class="table table-stripped">
              <tr>
                <th>Id</th>
                <th>{{ 'product.name' | trans }}</th>
-               <th>Precio</th>
-               <th>Descripcion</th>
-               <th>Categoria</th>
+               <th>{{ 'product.price' | trans }}</th>
+               <th>{{ 'product.descripcion' | trans }}</th>
+               <th>{{ 'product.category' | trans }}</th>
                {% if is_granted('ROLE_APP_ADMIN') %}
 	                 <th><i class="fa fa-trash"></i></th>
                {% endif %}   

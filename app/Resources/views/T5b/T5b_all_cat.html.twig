@@ -1,14 +1,16 @@
 {# app/Resources/views/T5b/T5b_all_cat.html.twig #}
         {% extends '::base.html.twig' %}
-        {% block title %}<title>T5b Visualización de lista de categorias</title>{% endblock %}
+        {% trans_default_domain 'AppBundle' %}
+        
+        {% block title %} {{ 'category.list.header' | trans }} {% endblock %}
 
         {% block content %}
-           <h3>Las categorias son:</h3>
+           <h3>{{ 'category.list.header' | trans }}</h3>
            <hr>
-           <table border="1">
+           <table class="table table-stripped">
              <tr>
                <th>Id</th>
-               <th>Nombre</th>
+               <th>{{ 'category.name' | trans }}</th>
                {% if is_granted('ROLE_APP_ADMIN') %}
 	                 <th><i class="fa fa-trash"></i></th>
                {% endif %} 
@@ -25,4 +27,3 @@
               {% endfor %}
               <hr>
 		{% endblock %}	
-  

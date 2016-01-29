@@ -99,6 +99,7 @@ class ProductController extends Controller
 		$em->persist($product);
 		$em->flush();                    
 		return new Response('Producto creado id '.$product->getId().' y su categoria id: '.$category->getId());
+		
 	}
 	
 	

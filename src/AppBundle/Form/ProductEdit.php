@@ -14,12 +14,11 @@ class ProductEdit extends AbstractType
 	public function buildForm(FormBuilderInterface $builder, array $options)
 	{	
 		$builder
-		->add('name', 'text', array('label' => 'Name product: '))					# type="string"
-		->add('price', 'text', array('label' => 'Price product: '))					# type="decimal"
-		->add('description', 'text', array('label' => 'Description product: '))		# type="text"
-		->add('category', 'entity', array('class' => 'AppBundle:Category',
-				                           'choice_label'=> 'name'))
-		->add('save', 'submit', array('label' => 'Guardar'));	
+		->add('name', 'text', array('label' => 'product.name', 'translation_domain' => 'AppBundle'))					# type="string"
+		->add('price', 'text', array('label' => 'product.price', 'translation_domain' => 'AppBundle'))					# type="decimal"
+		->add('description', 'text', array('label' => 'product.description', 'translation_domain' => 'AppBundle'))		# type="text"
+		->add('category', 'entity', array('class' => 'product.category', 'translation_domain' => 'AppBundle', 'choice_label'=> 'name'))
+		->add('save', 'submit', array('label' => 'product.form.save', 'translation_domain' => 'AppBundle'));	
 	}
 
 	public function getName()

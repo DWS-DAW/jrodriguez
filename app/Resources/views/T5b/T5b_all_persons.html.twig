@@ -1,19 +1,22 @@
-{# app/Resources/views/T5b/T5b_all_persons.html.twig #}
+{# app/Resources/views/T5b/T5b_all_persons.html.twig #}     
         {% extends '::base.html.twig' %}
-        {% block title %}<title>T5b Visualización de personas registradas</title>{% endblock %}
+        {% trans_default_domain 'AppBundle' %}
+        
+        {% block title %} {{ 'person.list.header' | trans }} {% endblock %}
+        
         {% block content %}
-           <h3>Las personas registradas son:</h3>
+           <h3> {{ 'person.list.header' | trans }} </h3>
            <hr>
-           <table border="1">
+           <tableclass="table table-stripped">
              <tr>
                <th>Id</th>
-               <th>Nombre</th>
-               <th>Edad</th>
-               <th>Email</th>
-               <th>Telefono</th>
-               <th>Web</th>
-               <th>Eliminar persona</th>
-               <th>Detalles persona</th>
+               <th>{{ 'person.name' | trans }}</th>
+               <th>{{ 'person.age' | trans }}</th>
+               <th>{{ 'person.email' | trans }}</th>
+               <th>{{ 'person.phone' | trans }}</th>
+               <th>{{ 'person.personalWebSite' | trans }}</th>
+               <th>{{ 'person.list.delete' | trans }}</th>
+               <th>{{ 'person.list.detail' | trans }}</th>
               </tr>
               {% for persona in listado_personas %}
               <tr>
@@ -28,4 +31,4 @@
               </tr>
               {% endfor %}
               <hr>
-		{% endblock %}	
+		{% endblock %}

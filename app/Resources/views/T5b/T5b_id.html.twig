@@ -1,14 +1,18 @@
 {# app/Resources/views/T5b/T5b_id.html.twig #}
 
         {% extends '::base.html.twig' %}
-        {% block title %}<title>T5b Visualización de producto por id</title>{% endblock %}
+        
+        {% trans_default_domain 'AppBundle' %}
+        
+        {% block title %} {{ 'product.list.headerById' | trans }} {% endblock %}
     
         {% block content %}
-           <h3>El producto elegido es:</h3>
+        
+           <h3>{{ 'product.list.headById' | trans }}</h3>
            <p>
-           Identificador:{{ identificador }}<br>
-           Nombre:{{ nombre }}<br>
-           Precio:{{ precio }}<br>
-           Descripcion:{{ descripcion }}<br>
+           {{ 'product.Id' | trans }}:{{ identificador }}<br>
+           {{ 'product.name' | trans }}:{{ nombre }}<br>
+           {{ 'product.price' | trans }}:{{ precio }}<br>
+           {{ 'product.description' | trans }}:{{ descripcion }}<br>
            </p>
 		{% endblock %}	

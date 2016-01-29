@@ -1,0 +1,78 @@
+# AppBundle/Resources/translations/AppBundle.es.yml
+
+base:
+  titulo: 'Practicas T5b'
+  inicio: 'Inicio'
+  productos: 'Productos'
+  nuevo: 'Nuevo'
+  nuevoEst: 'Nuevo estatica'
+  nuevoPar: 'Nuevo parametrizado'
+  listado: 'Listado' 
+  categorias : 'Categorias'
+  nueva: 'Nueva'
+  nuevaEst: 'Nueva Estatica'
+  listadoXCat: 'Listado productos por categoria'
+  personas: 'Personas'
+  acceder: 'Acceder'
+  registro: 'Registrarse'
+  recordarme: 'Recordarme'
+  entrar: 'Entrar'
+  cancelar: 'Cancelar'
+
+product:
+  id: 'id'
+  name: 'Nombre'
+  description: 'Descripción'
+  price: 'Precio'
+  category: 'Categoria'
+  list:
+    header: 'Listado de productos'
+    headerByCat: 'Listado de productos por categorias'
+    headerById: 'Visualización detallada de producto por Id'
+    edit: 'Editar'
+    delete: 'Eliminar'
+    headById: 'El producto seleccionado es: '
+  flash:
+    price: 'El valor del precio introducido es erroneo'
+  form:
+    save: 'Guardar'
+    saveAndAdd: 'Guardar y continuar'
+    
+category:
+  id: 'id'
+  name: 'Nombre'
+  list:
+    header: 'Listado de categorias'
+    edit: 'Editar'
+    delete: 'Eliminar'
+  form:
+    save: 'Guardar'
+    saveAndAdd: 'Guardar y continuar'
+    
+person:
+  age: 'Edad'
+  birthDate: 'Fecha de nacimiento'
+  cardNumber: 'Número de tarjeta'
+  descends: 'Hijos'
+  email: 'Email'
+  englishLevel: 'Nivel inglés'
+  gender: 'Genero'
+  height: 'Edad'
+  IBAN: 'IBAN'
+  id: 'id'
+  name: 'Nombre'
+  personalWebSite: 'Web personal'
+  phone: 'Teléfono'
+  preferredLanguaje: 'Lenguaje preferido' 
+  vehicle: 'Dipone Vehículo'
+  list:
+    header: 'Listado de personas'
+    headerSingle: 'Listado detallado de persona'
+    selected: 'La persona seleccionada es:'
+    edit: 'Editar'
+    delete: 'Eliminar'
+    detail: 'Detalle'
+  form:
+    save: 'Guardar'
+    saveAndAdd: 'Guardar y continuar'
+  

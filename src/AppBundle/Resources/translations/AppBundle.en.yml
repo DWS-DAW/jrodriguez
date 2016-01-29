@@ -1,0 +1,77 @@
+# AppBundle/Resources/translations/AppBundle.en.yml
+
+base:
+  titulo: 'Practice T5b'
+  inicio: 'Init'
+  productos: 'Products'
+  nuevo: 'New'
+  nuevoEst: 'Static New'
+  nuevoPar: 'Parametrized New '
+  listado: 'Report' 
+  categorias : 'Categorys'
+  nueva: 'New'
+  nuevaEst: 'Static New'
+  listadoXCat: 'Products report by category'
+  personas: 'People'
+  acceder: 'In'
+  registro: 'Registry'
+  recordarme: 'Remember me'
+  entrar: 'Sign in'
+  cancelar: 'Cancel'
+  
+product:
+  id: 'id'
+  name: 'Name'
+  description: 'Description'
+  price: 'Price'
+  category: 'Category'
+  list:
+    header: 'Product list'
+    headerByCat: 'List products By category'
+    headerById: 'Viewing detailed product by ID'
+    edit: 'Edit'
+    delete: 'Delete'
+    headById: 'The selected product is: '
+  flash:
+    price: 'The added value of the price is wrong'
+  form:
+    save: 'Save'
+    saveAndAdd: 'Save and continue'
+    
+category:
+  id: 'id'
+  name: 'Name'
+  list:
+    header: 'Category List'
+    edit: 'Edit'
+    delete: 'Delete'
+  form:
+    save: 'Save'
+    saveAndAdd: 'Save and continue'
+    
+person:
+  age: 'Age'
+  birthDate: 'Birth date'
+  cardNumber: 'Card number'
+  descends: 'Descends'
+  email: 'Email'
+  englishLevel: 'English Level'
+  gender: 'Gender'
+  height: 'Height'
+  IBAN: 'IBAN'
+  id: 'id'
+  name: 'Name'
+  personalWebSite: 'Personal Web'
+  phone: 'Phone'
+  preferredLanguaje: 'Preferred languaje' 
+  vehicle: 'Vehicle enabled'
+  list:
+    header: 'People list'
+    headerSingle: 'Personal detail info'
+    selected: 'The selected person is:'
+    edit: 'Edit'
+    delete: 'Delete'
+    detail: 'Detail'
+  form:
+    save: 'Save'
+    saveAndAdd: 'Save and continue'

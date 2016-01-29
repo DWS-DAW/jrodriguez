@@ -1,25 +1,29 @@
 {# app/Resources/views/T5b/T5b_id_person.html.twig #}
-
     
         {% extends '::base.html.twig' %}
-        {% block title %}<title>T5b Visualizacion detallada de la persona por id</title>{% endblock %}
+        
+        {% trans_default_domain 'AppBundle' %}
+        
+        {% block title %} {{ 'person.list.headerSingle' | trans }} {% endblock %}
+        
+        
         {% block content %}
-           <h3>La persona seleccionada es:</h3>
+           <h3>{{ 'person.list.selected' | trans }}</h3>
            <p>         
-           <strong>Identificador:&nbsp</strong>{{ identificador }}<br>
-           <strong>Nombre:&nbsp</strong>{{ nombre }}<br>
-           <strong>Edad:&nbsp</strong>{{ edad }}<br>
-           <strong>Fecha de nacimiento:&nbsp</strong>{{ fecha_nacimiento|date("m/d/Y") }}<br>
-           <strong>Altura:&nbsp</strong>{{ altura }}<br>
-           <strong>Email:&nbsp</strong>{{ email }}<br>
-           <strong>Telefono:&nbsp</strong>{{ telefono }}<br>
-           <strong>Genero:&nbsp</strong>{{ sexo }}<br>
-           <strong>Descendientes:&nbsp</strong>{{ descendientes }}<br>
-           <strong>Vehiculo propio:&nbsp</strong>{{ vehiculo }}<br>
-           <strong>Lenguage preferido:&nbsp</strong>{{ lenguage }}<br>
-           <strong>Nivel de ingles:&nbsp</strong>{{ nivel_ingles }}<br>
-           <strong>Web Personal:&nbsp</strong>{{ web }}<br>
-           <strong>Numero Tarjeta bancaria:&nbsp</strong>{{ targeta }}<br>
-           <strong>IBAN:&nbsp</strong>{{ iban }}<br>
+           <strong>Id:&nbsp</strong>{{ identificador }}<br>
+           <strong>{{ 'person.name' | trans }}:&nbsp</strong>{{ nombre }}<br>
+           <strong>{{ 'person.age' | trans }}:&nbsp</strong>{{ edad }}<br>
+           <strong>{{ 'person.birthDate' | trans }}:&nbsp</strong>{{ fecha_nacimiento|date("m/d/Y") }}<br>
+           <strong>{{ 'person.height' | trans }}:&nbsp</strong>{{ altura }}<br>
+           <strong>{{ 'person.email' | trans }}:&nbsp</strong>{{ email }}<br>
+           <strong>{{ 'person.phone' | trans }}:&nbsp</strong>{{ telefono }}<br>
+           <strong>{{ 'person.gender' | trans }}:&nbsp</strong>{{ sexo }}<br>
+           <strong>{{ 'person.descends' | trans }}:&nbsp</strong>{{ descendientes }}<br>
+           <strong>{{ 'person.vehicle' | trans }}:&nbsp</strong>{{ vehiculo }}<br>
+           <strong>{{ 'person.preferredLanguaje' | trans }}:&nbsp</strong>{{ lenguage }}<br>
+           <strong>{{ 'person.englishLevel' | trans }}:&nbsp</strong>{{ nivel_ingles }}<br>
+           <strong>{{ 'person.personalWebsite' | trans }}:&nbsp</strong>{{ web }}<br>
+           <strong>{{ 'person.cardNumber' | trans }}:&nbsp</strong>{{ targeta }}<br>
+           <strong>{{ 'person.IBAN' | trans }}:&nbsp</strong>{{ iban }}<br>
            </p>
 		{% endblock %}	

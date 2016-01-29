@@ -11,22 +11,22 @@ class PersonType extends AbstractType
 	public function buildForm(FormBuilderInterface $builder, array $options)
 	{	
 		$builder
-		->add('name', 'text', array('label' => 'Name person: '))					# type="string"
-		->add('age', 'integer', array('label' => 'Age person: '))	    				# type="decimal"
-		->add('birthDate', 'date', array('label' => 'Birth date person: '))        	# type="date"
-		->add('height', 'integer', array('label' => 'Height person: '))
-		->add('email', 'text', array('label' => '@ person: '))
-		->add('phone', 'integer', array('label' => 'Phone person: '))
+		->add('name', 'text', array('label' => 'person.name', 'translation_domain' => 'AppBundle'))					# type="string"
+		->add('age', 'integer', array('label' => 'person.age', 'translation_domain' => 'AppBundle'))	    				# type="decimal"
+		->add('birthDate', 'date', array('label' => 'person.birthDate', 'translation_domain' => 'AppBundle'))        	# type="date"
+		->add('height', 'integer', array('label' => 'person.height', 'translation_domain' => 'AppBundle'))
+		->add('email', 'text', array('label' => 'person.email', 'translation_domain' => 'AppBundle'))
+		->add('phone', 'integer', array('label' => 'person.phone', 'translation_domain' => 'AppBundle'))
 		// Lista desplegable con sólo las opciones de masculino y femenino
 		->add('gender', 'choice', array('choices' => array(
-				                           'Masculino' => 'm',
-				                           'Femenino' => 'f',
+				                           'M' => 'm',
+				                           'F' => 'f',
 		                               ),
 			'choices_as_values' => true,	
 		))
-		->add('descends', 'text', array('label' => 'Descends person: '))
+		->add('descends', 'text', array('label' => 'person.descends', 'translation_domain' => 'AppBundle'))
 		// Checkbox de si tiene vehiculo o no 
-		->add('vehicle', 'checkbox', array('label' => 'Have vehicle? Check if yes: ', 'required' => false))
+		->add('vehicle', 'checkbox', array('label' => 'person.vehicle', 'translation_domain' => 'AppBundle', 'required' => false))
 		// Lista de todos los lenguajes posibles para seleccionar el preferido
 		->add('preferredLanguage', 'choice', array('choices' => array(
 				                           'Valenciano' => 'vlc',
@@ -52,11 +52,11 @@ class PersonType extends AbstractType
                           'required' => true,
                           'label' => 'English Level: ',
         ))	
-		->add('personalWebSite', 'text', array('label' => 'Personal Web: '))
-		->add('cardNumber', 'text', array('label' => 'Card Number: '))
-		->add('IBAN', 'text', array('label' => 'IBAN: '))
-		->add('save', 'submit', array('label' => 'Guardar'))
-		->add('continue', 'submit', array('label' => 'Guardar y Continuar'));	
+		->add('personalWebSite', 'text', array('label' => 'person.personalWebSite', 'translation_domain' => 'AppBundle'))
+		->add('cardNumber', 'text', array('label' => 'person.cardNumber', 'translation_domain' => 'AppBundle'))
+		->add('IBAN', 'text', array('label' => 'person.IBAN', 'translation_domain' => 'AppBundle'))
+		->add('save', 'submit', array('label' => 'person.form.save', 'translation_domain' => 'AppBundle'))
+		->add('continue', 'submit', array('label' => 'person.form.saveAndAdd', 'translation_domain' => 'AppBundle'));	
 	}
 
 	public function getName()

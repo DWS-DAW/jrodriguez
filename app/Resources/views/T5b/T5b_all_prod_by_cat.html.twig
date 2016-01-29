@@ -1,6 +1,9 @@
 {# app/Resources/views/T5b/T5b_all_prod_by_cat.html.twig #}
 		{% extends '::base.html.twig' %}
-        {% block title %}<title>T5b Visualización de lista de productos</title>{% endblock %}
+		
+		{% trans_default_domain 'AppBundle' %}
+        
+        {% block title %} {{ 'product.list.headerByCat' | trans }} {% endblock %}
         
         {% block content %}
          {% for cat in listado_categorias %}

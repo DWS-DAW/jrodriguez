@@ -1,4 +1,3 @@
- {% trans_default_domain 'AppBundle' %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head 
     content must come *after* these tags -->
-    {% block title %} {{ 'base.titulo' | trans }} {% endblock %}
+    <title>Practicas T5b</title>
     {% block stylesheets %}
     <!-- CSS de Bootstrap dsd los cdn (central download network) -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -27,41 +26,41 @@
             
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/"> <span class="glyphicon glyphicon-home" aria-hidden="true"></span> {{ 'base.inicio' | trans }}</a></li>
+                    <li class="active"><a href="/"> <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a></li>
                   
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>  {{ 'base.productos' | trans }} <span class="caret"></span></a>
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Productos <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                         	<!-- Los href los saco del src/AppBundle/Resources/Config/routing.yml -->
-                            <li><a href="{{ path('reg_producto') }}"> {{ 'base.nuevo' | trans }}</a></li>
-                            <li><a href="{{ path('form_prueba') }}"> {{ 'base.nuevoEst' | trans }}</a></li>
-                            <li><a href="{{ path('reg_dinamico', {name:'ProductoS',price:'30.33'}) }}">{{ 'base.nuevoPar' | trans }}</a></li>                            
+                            <li><a href="{{ path('reg_producto') }}">Nuevo</a></li>
+                            <li><a href="{{ path('form_prueba') }}">Nuevo estatica</a></li>
+                            <li><a href="{{ path('reg_dinamico', {name:'ProductoS',price:'30.33'}) }}">Nuevo parametrizado</a></li>                            
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{ path('reg_lista') }}">{{ 'base.listado' | trans }}</a></li>
+                            <li><a href="{{ path('reg_lista') }}">Listado</a></li>
                         </ul>
                     </li>
                     
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> {{ 'base.categorias' | trans }} <span class="caret"></span></a>
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Categorias <span class="caret"></span></a>
                       
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('cat_dinamica', {name:'NombreCat'}) }}"> {{ 'base.nueva' | trans }}</a></li>
-                            <li><a href="{{ path('form_nuevaCategoria') }}"> {{ 'base.nuevaEst' | trans }}</a></li>  
+                            <li><a href="{{ path('cat_dinamica', {name:'NombreCat'}) }}">Nueva</a></li>
+                            <li><a href="{{ path('form_nuevaCategoria') }}">Nueva Estatica</a></li>  
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{ path('cat_lista') }}">{{ 'base.listado' | trans }}</a></li>
-                            <li><a href="{{ path('reg_listaAll') }}">{{ 'base.listadoXCat' | trans }}</a></li>
+                            <li><a href="{{ path('cat_lista') }}">Listado</a></li>
+                            <li><a href="{{ path('reg_listaAll') }}">Listado productos por categoria</a></li>
                         </ul>
                     </li>
     
     				<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> {{ 'base.personas' | trans }} <span class="caret"></span></a>
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Personas <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('form_nuevaPersona') }}"> {{ 'base.nueva' | trans }}</a></li>
+                            <li><a href="{{ path('form_nuevaPersona') }}">Nueva</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{ path('persona_lista') }}">{{ 'base.listado' | trans }}</a></li>
+                            <li><a href="{{ path('persona_lista') }}">Listado</a></li>
                         </ul>
                     </li>
                     
@@ -69,10 +68,10 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a data-toggle="modal" data-target="#loginModal">
-                    	<span class="glyphicon glyphicon-log-in"></span>{{ 'base.acceder' | trans }} </a>
+                    	<span class="glyphicon glyphicon-log-in"></span> Acceder</a>
                     </li>
                     <li>               
-	                    <a href="{{ path('fos_user_registration_register') }}"><span class="glyphicon glyphicon-plus"></span>{{ 'base.registro' | trans }} </a>
+	                    <a href="{{ path('fos_user_registration_register') }}"><span class="glyphicon glyphicon-plus"></span> Registrarse</a>
                     </li>
                     <li class="dropdown">
                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -101,10 +100,10 @@
                             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
                             <input type="text" class="form-control" placeholder="Email" name="_username" />
                             <input type="text" class="form-control" placeholder="Password" name="_password" />
-                            <input type="checkbox"> <span class="label label‐danger">{{ 'base.recordarme' | trans }}</span>
+                            <input type="checkbox"> <span class="label label‐danger">Remember me</span>
                           </div>
-                          <button type="submit" class="btn btn-primary navbar-btn">{{ 'base.entrar' | trans }}</button>
-                          <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">{{ 'base.cancelar' | trans }}</button>  
+                          <button type="submit" class="btn btn-primary navbar-btn">Sign in</button>
+                          <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>  
                      </form>
 
                 </div>
