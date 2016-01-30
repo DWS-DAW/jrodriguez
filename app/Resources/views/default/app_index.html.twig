@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
-
+{% trans_default_domain 'AppBundle' %}
 {% block content %}
   <div class="page-header">
-  	<h1> Bienvenid@s a mi App</h1>
+  	<h1> {{ 'paginaInicio.bienvenida' | trans }}</h1>
   </div>
 {% endblock %}

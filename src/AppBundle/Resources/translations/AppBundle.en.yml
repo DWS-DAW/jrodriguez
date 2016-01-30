@@ -19,6 +19,9 @@ base:
   entrar: 'Sign in'
   cancelar: 'Cancel'
   
+paginaInicio:
+  bienvenida: 'Wellcome to the my first App'
+  
 product:
   id: 'id'
   name: 'Name'
