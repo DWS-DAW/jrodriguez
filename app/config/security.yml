@@ -8,8 +8,8 @@ security:
             FOS\UserBundle\Model\UserInterface: bcrypt
             
         role_hierarchy:
-            ROLE_ADMIN:       ROLE_USER
-            ROLE_SUPER_ADMIN: ROLE_ADMIN
+           ROLE_ADMIN:       ROLE_USER, ROLE_APP_ADMIN
+           ROLE_SUPER_ADMIN: ROLE_ADMIN
     
         providers:
             fos_userbundle:
@@ -43,4 +43,5 @@ security:
             - { path: ^/[a-z]+/admin, roles: ROLE_ADMIN }
             - { path: ^/[a-z]+/product/, roles: [ROLE_APP_ADMIN,ROLE_USER] }
             - { path: ^/[a-z]+/category/, roles: [ROLE_APP_ADMIN,ROLE_USER] }            
+        
             
