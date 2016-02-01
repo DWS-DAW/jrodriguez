@@ -5,8 +5,8 @@ app:
 
 # Aqui es dnd se indica la raiz del sitio, llamado al controller que ejecute la indexAction que llama 'default/app_index.html.twig'
 index:   
-  path: /  
-  defaults: { _controller: AppBundle:Default:index } 
+  path: /{_locale} 
+  defaults: { _controller: AppBundle:Default:index , _locale: es} 
 
 
 app_yml:

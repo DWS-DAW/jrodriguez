@@ -1,98 +1,126 @@
 reg_producto:   
-  path: /product/create   
-  defaults: { _controller: AppBundle:Product:createStatic }        
+  path: /{_locale}/product/create   
+  defaults: { _controller: AppBundle:Product:createStatic }
+  requirements:
+    _locale: en|es        
   
 reg_identificador:
-  path: /product/show/{id}   
+  path: /{_locale}/product/show/{id}   
   defaults: { _controller: AppBundle:Product:show}
   requirements:
     id: \d{1,2}
+    _locale: en|es
 
 reg_lista:   
-  path: /product/list   
-  defaults: { _controller: AppBundle:Product:list }   
+  path: /{_locale}/product/list   
+  defaults: { _controller: AppBundle:Product:list }
+  requirements:
+   _locale: en|es   
   
 reg_dinamico:   
-  path: /product/create/{name}/{price}   
+  path: /{_locale}/product/create/{name}/{price}   
   defaults: { _controller: AppBundle:Product:createParam }
   requirements: 
     name: "[A-Za-z]+"
     price: (\d{2})|(\d{2}\.\d{2})
+    _locale: en|es
     
 reg_listaByCat:
-  path: /product/list/category/{category}   
+  path: /{_locale}/product/list/category/{category}   
   defaults: { _controller: AppBundle:Product:listByCategory }
   requirements:
-    category: "[A-Za-z0-9]+"    
+    category: "[A-Za-z0-9]+"
+    _locale: en|es    
     
 reg_listaAll:   
-  path: /product/list/category   
-  defaults: { _controller: AppBundle:Product:listAllByCategory }      
+  path: /{_locale}/product/list/category   
+  defaults: { _controller: AppBundle:Product:listAllByCategory }
+  requirements:
+    _locale: en|es      
     
 reg_borraById:
-  path: /product/delete/{id}   
+  path: /{_locale}/product/delete/{id}   
   defaults: { _controller: AppBundle:Product:delete }
   requirements:
     id: \d{1,2}
+    _locale: en|es
     
 form_editaProducto:
-  path: /product/edit/{id}
+  path: /{_locale}/product/edit/{id}
   defaults: { _controller: AppBundle:Product:edit }
   requirements:
     id: \d{1,2}
+    _locale: en|es
   
     
 cat_dinamica:
-  path: /category/create/{name}   
+  path: /{_locale}/category/create/{name}   
   defaults: { _controller: AppBundle:Category:create }
   requirements: 
     name: "[A-Za-z0-9]+"
+    _locale: en|es
 
 cat_borra:
-  path: /category/delete/{id}   
+  path: /{_locale}/category/delete/{id}   
   defaults: { _controller: AppBundle:Category:delete }
   requirements:
     id: \d{1,2}
+    _locale: en|es
   
 cat_lista:   
-  path: /category/list   
+  path: /{_locale}/category/list   
   defaults: { _controller: AppBundle:Category:list }
+  requirements:
+    _locale: en|es
   
 form_prueba:
-  path: /product/new
+  path: /{_locale}/product/new
   defaults: { _controller: AppBundle:Product:newProduct }
-  
+  requirements:
+    _locale: en|es  
   
 form_nuevaCategoria:
-  path: /category/new
+  path: /{_locale}/category/new
   defaults: { _controller: AppBundle:Category:newCategory }  
-  
+  requirements:
+    _locale: en|es
+      
 form_editaCategoria:
-  path: /category/edit/{id}
+  path: /{_locale}/category/edit/{id}
   defaults: { _controller: AppBundle:Category:edit }
   requirements:
     id: \d{1,2}
+    _locale: en|es
   
 form_nuevaPersona:
-  path: /person/new
+  path: /{_locale}/person/new
   defaults: { _controller: AppBundle:Person:new }
+  requirements:
+    _locale: en|es
   
 persona_lista:   
-  path: /person/list   
+  path: /{_locale}/person/list   
   defaults: { _controller: AppBundle:Person:list } 
-  
+  requirements:
+    _locale: en|es
+    
+    
 persona_borraById:
-  path: /person/delete/{id}   
+  path: /{_locale}/person/delete/{id}   
   defaults: { _controller: AppBundle:Person:delete }
   requirements:
     id: \d{1,2}     
-    
+    _locale: en|es    
+
 persona_muestraById:
-  path: /person/show/{id}   
+  path: /{_locale}/person/show/{id}   
   defaults: { _controller: AppBundle:Person:show }
   requirements:
     id: \d{1,2}
-    
+    _locale: en|es
+        
 seguridad_1:
-  path: /admin   
+  path: /{_locale}/admin   
   defaults: { _controller: AppBundle:Default:admin }
+  requirements:
+    _locale: en|es

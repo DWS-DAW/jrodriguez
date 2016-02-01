@@ -7,12 +7,14 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class CategoryType extends AbstractType
 {
+	
+
 	public function buildForm(FormBuilderInterface $builder, array $options)
 	{
 		$builder
 		->add('name', 'text', array('label' => 'category.name', 'translation_domain' => 'AppBundle'))
-		->add('save', 'submit', array('label' => 'category.save', 'translation_domain' => 'AppBundle'))
-		->add('continue', 'submit', array('label' => 'category.saveAndAdd', 'translation_domain' => 'AppBundle'));
+		->add('save', 'submit', array('label' => 'category.form.save', 'translation_domain' => 'AppBundle'))
+		->add('continue', 'submit', array('label' => 'category.form.saveAndAdd', 'translation_domain' => 'AppBundle'));
 	}
 
 	public function getName()
