@@ -21,6 +21,8 @@ base:
   
 paginaInicio:
   bienvenida: 'Wellcome to the my first App'
+  autor: 'Jose Francisco Rodriguez' 
+  usuarios: 'To access login with: user1, user2, or user3 and password 123'
   
 product:
   id: 'id'

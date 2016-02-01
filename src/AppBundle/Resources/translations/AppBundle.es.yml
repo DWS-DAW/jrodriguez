@@ -21,6 +21,8 @@ base:
 
 paginaInicio:
   bienvenida: 'Bienvenid@s a mi primera App'
+  autor: 'Jose Francisco Rodriguez' 
+  usuarios: 'Para acceder, identificarse como: user1, user2, user3 con clave 123'
   
 product:
   id: 'id'
