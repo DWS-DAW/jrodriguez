@@ -41,8 +41,6 @@ security:
             - { path: ^/[a-z]+/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/[a-z]+/admin/, role: ROLE_ADMIN }
             - { path: ^/[a-z]+/admin, roles: ROLE_ADMIN }
-            #- { path: ^/[a-z]+/product/, roles: [ROLE_APP_ADMIN,ROLE_USER] }
-            #- { path: ^/[a-z]+/category/, roles: [ROLE_APP_ADMIN,ROLE_USER] }  
             - { path: ^/[a-z]+/product/create, roles: ROLE_APP_ADMIN }
             - { path: ^/[a-z]+/product/new, roles: ROLE_APP_ADMIN }
             - { path: ^/[a-z]+/product/list, roles: ROLE_USER }
@@ -58,7 +56,7 @@ security:
             - { path: ^/[a-z]+/person/list, roles: ROLE_USER }
             - { path: ^/[a-z]+/person/show, roles: ROLE_USER }
             - { path: ^/[a-z]+/person/delete, roles: ROLE_APP_ADMIN }
-                      
-           
+            #- { path: ^/[a-z]+/product/, roles: [ROLE_APP_ADMIN,ROLE_USER] }
+            #- { path: ^/[a-z]+/category/, roles: [ROLE_APP_ADMIN,ROLE_USER] }            
         
             

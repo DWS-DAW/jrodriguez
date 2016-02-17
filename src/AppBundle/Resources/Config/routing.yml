@@ -1,8 +1,7 @@
 reg_producto:   
   path: /{_locale}/product/create   
   defaults: { _controller: AppBundle:Product:createStatic }
-  requirements:
-    _locale: en|es        
+      
   
 reg_identificador:
   path: /{_locale}/product/show/{id}   
