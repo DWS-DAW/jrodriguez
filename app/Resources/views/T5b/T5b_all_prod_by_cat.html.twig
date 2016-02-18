@@ -11,7 +11,10 @@
               <table>
               {% for product in cat.products %} {# esto lo que consigue es otra SELECT por parte del symfony de todos los productos de la cat que estamos tratando el el 1er bucle #}
               <tr>           	
-              	<td><a href="{{ path('reg_identificador', {'id':product.id}) }}">{{ product.id }}</a></td><td>{{ product.name }}</td><td>{{ product.price }}</td><td>{{ product.description }}</td><td><a href="{{ path('reg_borraById', {'id':product.id}) }}"> Borra el art: {{ product.id }}</a></td>
+              	<td><a href="{{ path('reg_identificador', {'id':product.id}) }}">{{ product.id }}</a></td><td>{{ product.name }}</td><td>{{ product.price }}</td><td>{{ product.description }}</td>
+              	{% if is_granted('ROLE_APP_ADMIN') %}
+              		<td><a href="{{ path('reg_borraById', {'id':product.id}) }}"> <i class="fa fa-trash"></i></a></td>              		   
+              	{% endif %} 
               </tr>
               {% endfor %}
               </table>

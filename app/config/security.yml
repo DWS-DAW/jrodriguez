@@ -32,7 +32,7 @@ security:
                     check_path: fos_user_security_check 
                     # if you are using Symfony < 2.8, use the following config instead:
                     # csrf_provider: form.csrf_provider
-              
+                
     
         # pongo la expresion regular /[a-z]+ al principio de cada ruta para aceptar la es y la en, de momento
         access_control:
@@ -41,23 +41,22 @@ security:
             - { path: ^/[a-z]+/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/[a-z]+/admin/, role: ROLE_ADMIN }
             - { path: ^/[a-z]+/admin, roles: ROLE_ADMIN }
-            #- { path: ^/[a-z]+/product/, roles: [ROLE_APP_ADMIN,ROLE_USER] }
-            #- { path: ^/[a-z]+/category/, roles: [ROLE_APP_ADMIN,ROLE_USER] }  
-            - { path: ^/[a-z]+/product/create, roles: ROLE_APP_ADMIN }
-            - { path: ^/[a-z]+/product/new, roles: ROLE_APP_ADMIN }
-            - { path: ^/[a-z]+/product/list, roles: ROLE_USER }
-            - { path: ^/[a-z]+/product/show, roles: ROLE_USER }
-            - { path: ^/[a-z]+/product/edit, roles: ROLE_APP_ADMIN }
-            - { path: ^/[a-z]+/product/delete, roles: ROLE_APP_ADMIN }
-            - { path: ^/[a-z]+/category/create, roles: ROLE_APP_ADMIN }
-            - { path: ^/[a-z]+/category/new, roles: ROLE_APP_ADMIN }
-            - { path: ^/[a-z]+/category/list, roles: ROLE_USER }
-            - { path: ^/[a-z]+/category/edit, roles: ROLE_APP_ADMIN }
-            - { path: ^/[a-z]+/category/delete, roles: ROLE_APP_ADMIN }
-            - { path: ^/[a-z]+/person/new, roles: ROLE_APP_ADMIN }
-            - { path: ^/[a-z]+/person/list, roles: ROLE_USER }
-            - { path: ^/[a-z]+/person/show, roles: ROLE_USER }
-            - { path: ^/[a-z]+/person/delete, roles: ROLE_APP_ADMIN }
+            - { path: ^/[a-z]+/product/createStatic, roles: [ROLE_ADMIN] }
+            - { path: ^/[a-z]+/product/createParam, roles: [ROLE_ADMIN] }
+            - { path: ^/[a-z]+/product/newProduct, roles: [ROLE_ADMIN] }
+            - { path: ^/[a-z]+/product/list, roles: [ROLE_USER] }
+            - { path: ^/[a-z]+/product/show, roles: [ROLE_USER] }
+            - { path: ^/[a-z]+/product/edit, roles: [ROLE_APP_ADMIN] }
+            - { path: ^/[a-z]+/product/delete, roles: [ROLE_APP_ADMIN] }
+            - { path: ^/[a-z]+/category/create, roles: [ROLE_APP_ADMIN] }
+            - { path: ^/[a-z]+/category/new, roles: [ROLE_APP_ADMIN] }
+            - { path: ^/[a-z]+/category/list, roles: [ROLE_USER] }
+            - { path: ^/[a-z]+/category/edit, roles: [ROLE_APP_ADMIN] }
+            - { path: ^/[a-z]+/category/delete, roles: [ROLE_APP_ADMIN] }
+            - { path: ^/[a-z]+/person/new, roles: [ROLE_APP_ADMIN] }
+            - { path: ^/[a-z]+/person/list, roles: [ROLE_USER] }
+            - { path: ^/[a-z]+/person/show, roles: [ROLE_USER] }
+            - { path: ^/[a-z]+/person/delete, roles: [ROLE_APP_ADMIN] }
                       
            
         
