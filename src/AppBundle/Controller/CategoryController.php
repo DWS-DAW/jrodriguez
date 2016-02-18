@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
 use AppBundle\Form\CategoryType; // Añado estas nuevas declaraciones para la creaciones de forms
-use AppBundle\Form\CategoryEdit;
 
 class CategoryController extends Controller
 {
@@ -109,7 +108,7 @@ class CategoryController extends Controller
 			throw $this->createNotFoundException('Ninguna categoria tiene esa id '.$id);
 		}else{
 			// ... Si encuentra alguna categoria con ese id Creo el form
-			$form = $this->createForm(new CategoryEdit(), $category);
+			$form = $this->createForm(new CategoryType(), $category);
 		
 			$form->handleRequest($request);					# Manejador de envios de formularios
 		

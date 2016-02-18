@@ -15,7 +15,7 @@ class ProductType extends AbstractType
 	{	
 		$builder
 		->add('name', 'text', array('label' => 'product.name', 'translation_domain' => 'AppBundle'))					# type="string"
-		->add('price', 'text', array('label' => 'product.price', 'translation_domain' => 'AppBundle'))					# type="decimal"
+		->add('price', 'money', array('label' => 'product.price', 'translation_domain' => 'AppBundle'))					# type="decimal"
 		->add('description', 'text', array('label' => 'product.description', 'translation_domain' => 'AppBundle'))		# type="text"
 		->add('category', 'entity', array('class' => 'AppBundle:Category', 'choice_label'=> 'name'))
 		->add('save', 'submit', array('label' => 'product.form.save', 'translation_domain' => 'AppBundle'))

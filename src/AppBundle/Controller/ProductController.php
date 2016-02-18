@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\Category;
 
 use AppBundle\Form\ProductType; // Añado estas nuevas declaraciones para la creación de forms
-use AppBundle\Form\ProductEdit;
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -201,7 +200,7 @@ class ProductController extends Controller
 			throw $this->createNotFoundException('Ningun producto tiene esa id '.$id);
 		}else{
 			// ... Si encuentra alguna categoria con ese id Creo el form
-			$form = $this->createForm(new ProductEdit(), $product);
+			$form = $this->createForm(new ProductType(), $product);
 	
 			$form->handleRequest($request);					# Manejador de envios de formularios
 	
