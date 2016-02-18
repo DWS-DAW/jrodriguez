@@ -13,6 +13,7 @@
                <th>{{ 'category.name' | trans }}</th>
                {% if is_granted('ROLE_APP_ADMIN') %}
 	                 <th><i class="fa fa-trash"></i></th>
+                   <th><i class="fa fa-pencil"></i></th>
                {% endif %} 
               </tr>
               {% for cat in listado_categorias %}
@@ -22,6 +23,8 @@
                  {# Condiciono el enlace al borrado al ROLE_APP_ADMIN #}
                  {% if is_granted('ROLE_APP_ADMIN') %} 
 	                 <td><a href="{{ path('cat_borra', {'id':cat.id}) }}"><i class="fa fa-trash"></i></a></td>
+                   <td><a href="{{ path('form_editaCategoria', {'id':cat.id}) }}"><i class="fa fa-pencil"></i></a></td>
+                   
                  {% endif %} 
               </tr>
               {% endfor %}

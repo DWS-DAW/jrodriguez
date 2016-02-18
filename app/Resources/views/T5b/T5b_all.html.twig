@@ -16,6 +16,7 @@
                <th>{{ 'product.category' | trans }}</th>
                {% if is_granted('ROLE_APP_ADMIN') %}
 	                 <th><i class="fa fa-trash"></i></th>
+                   <th><i class="fa fa-pencil"></i></th>
                {% endif %}   
              </tr>
               {% for prod in listado_productos %}
@@ -29,6 +30,9 @@
 	                 <td>   
 	                    <a href="{{ path('reg_borraById', {'id':prod.id}) }}"> <i class="fa fa-trash"></i> </a>        
 	                 </td>
+                   <td>   
+                      <a href="{{ path('form_editaProducto', {'id':prod.id}) }}"> <i class="fa fa-pencil"></i> </a>        
+                   </td>
                  {% endif %}    
               </tr>
               {% endfor %}
